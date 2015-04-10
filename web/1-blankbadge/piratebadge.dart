@@ -2,6 +2,12 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-void main() {
-  // Your app starts here.
+import 'dart:html';
+
+void  main() {
+  querySelector('#inputName').onInput.listen(updateBadge);
+}
+
+void updateBadge(Event e) {
+  querySelector('#badgeName').text = (e.target as InputElement).value;
 }
